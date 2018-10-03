@@ -86,6 +86,23 @@ endef
 
 $(eval $(call KernelPackage,iio-dht11))
 
+define KernelPackage/iio-si7020
+  SUBMENU:=$(IIO_MENU)
+  DEPENDS:=+kmod-iio-core +kmod-i2c-core
+  TITLE:=SI7020 humidity and temperature sensor
+  KCONFIG:= \
+	CONFIG_SI7020
+  FILES:=$(LINUX_DIR)/drivers/iio/humidity/si7020.ko
+  AUTOLOAD:=$(call AutoLoad,56,si7020)
+endef
+
+define KernelPackage/iio-si7020/description
+ support for si7020 digitial humidity and temperature sensor
+ connected via I2C.
+endef
+
+$(eval $(call KernelPackage,iio-si7020))
+
 define KernelPackage/iio-bmp280
   SUBMENU:=$(IIO_MENU)
   TITLE:=BMP180/BMP280/BME280 pressure/temperatur sensor

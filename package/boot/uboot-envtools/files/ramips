@@ -23,6 +23,7 @@ all0256n-8M|\
 all5002)
 	ubootenv_add_uci_config "/dev/mtd1" "0x0" "0x10000" "0x10000"
 	;;
+hlk7688a|\
 linkits7688|\
 miwifi-nano|\
 sk-wb8|\

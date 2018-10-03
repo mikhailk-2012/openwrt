@@ -66,6 +66,15 @@ define Device/LinkIt7688
 endef
 TARGET_DEVICES += LinkIt7688
 
+define Device/HLK7688A
+  DTS := HLK7688A
+  IMAGE_SIZE := $(ralink_default_fw_size_32M)
+  SUPPORTED_DEVICES := hlk7688a
+  DEVICE_TITLE := Hi-Link HLK-7688A
+  DEVICE_PACKAGES:= kmod-usb2 kmod-usb-ohci kmod-ledtrig-netdev uboot-envtools kmod-sdhci-mt7620
+endef
+TARGET_DEVICES += HLK7688A
+
 define Device/mac1200r-v2
   DTS := MAC1200RV2
   DEVICE_TITLE := Mercury MAC1200R v2.0

@@ -271,6 +271,9 @@ ramips_board_detect() {
 	*"M4 (8M)")
 		name="m4-8M"
 		;;
+	*"HILINK HLK-7688A")
+                name="hlk7688a"
+	        ;;
 	*"MediaTek LinkIt Smart 7688")
 		name="linkits7688"
 		;;
