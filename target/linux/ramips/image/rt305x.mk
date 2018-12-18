@@ -132,7 +132,7 @@ define Device/asl26555-16M
   IMAGE_SIZE := 15872k
   SUPPORTED_DEVICES += asl26555
   DEVICE_TITLE := Alpha ASL26555 16M
-  DEVICE_PACKAGES :=
+  DEVICE_PACKAGES := kmod-usb-core kmod-usb-dwc2 kmod-usb-ledtrig-usbport
 endef
 TARGET_DEVICES += asl26555-16M
 
@@ -209,6 +209,22 @@ define Device/dap-1350
   DEVICE_TITLE := D-Link DAP-1350
 endef
 TARGET_DEVICES += dap-1350
+
+define Device/dcs-930
+  DTS := DCS-930
+  IMAGE_SIZE := $(ralink_default_fw_size_4M)
+  DEVICE_TITLE := D-Link DCS-930
+  DEVICE_PACKAGES := kmod-video-core kmod-video-uvc kmod-sound-core kmod-usb-audio kmod-usb-core kmod-usb-dwc2
+endef
+TARGET_DEVICES += dcs-930
+
+define Device/dcs-930l-b1
+  DTS := DCS-930L-B1
+  IMAGE_SIZE := $(ralink_default_fw_size_4M)
+  DEVICE_TITLE := D-Link DCS-930L B1
+  DEVICE_PACKAGES := kmod-video-core kmod-video-uvc kmod-sound-core kmod-usb-audio kmod-usb-core kmod-usb-ohci kmod-usb2
+endef
+TARGET_DEVICES += dcs-930l-b1
 
 define Device/dir-300-b1
   DTS := DIR-300-B1
@@ -329,6 +345,7 @@ define Device/f5d8235-v2
   DTS := F5D8235_V2
   IMAGE_SIZE := 7744k
   DEVICE_TITLE := Belkin F5D8235 v2
+  DEVICE_PACKAGES := kmod-switch-rtl8366rb
 endef
 TARGET_DEVICES += f5d8235-v2
 
@@ -652,7 +669,7 @@ TARGET_DEVICES += rt-n10-plus
 define Device/rt-n13u
   DTS := RT-N13U
   DEVICE_TITLE := Asus RT-N13U
-  DEVICE_PACKAGES := kmod-leds-gpio kmod-rt2800-pci wpad-mini kmod-usb-dwc2
+  DEVICE_PACKAGES := kmod-leds-gpio kmod-rt2800-pci kmod-usb-dwc2
 endef
 TARGET_DEVICES += rt-n13u
 
